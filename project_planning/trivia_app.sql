@@ -37,6 +37,12 @@ CREATE TABLE team_rankings (
   team_losses INTEGER REFERENCES teams(id) ON DELETE CASCADE                    
 );
 
+CREATE TABLE games (
+  id SERIAL PRIMARY KEY,
+  team_id INTEGER REFERENCES teams(id) ON DELETE CASCADE,
+  game_date date NOT NULL,
+  game_time time with time zone NOT NULL,
+)
 
 INSERT INTO users
 (id, email, password_hashed, password_confirmation_hashed)
