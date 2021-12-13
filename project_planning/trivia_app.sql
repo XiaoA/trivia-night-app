@@ -27,7 +27,8 @@ CREATE TABLE teams (
 CREATE TABLE team_members (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  team_id INTEGER REFERENCES teams(id) ON DELETE CASCADE
+  team_id INTEGER REFERENCES teams(id) ON DELETE CASCADE,
+  is_leader BOOLEAN
 );
 
 CREATE TABLE team_rankings (
